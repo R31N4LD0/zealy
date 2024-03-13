@@ -127,7 +127,7 @@ const ReactionModal = ({ onClose, onAddReaction }) => {
     "🤕",
     "🤑",
     "🤠",
-  ]; // Adicione mais emojis conforme necessário
+  ];
 
   const handleEmojiSelect = (emoji) => {
     setSelectedEmoji(emoji);
@@ -151,12 +151,14 @@ const ReactionModal = ({ onClose, onAddReaction }) => {
           </button>
         ))}
       </div>
+
       <textarea
         placeholder="Add a comment (optional)"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         className="comment-text"
       />
+
       <div className="comment-actions">
         <button onClick={handleAddComment}>Add Reaction</button>
         <button onClick={onClose}>Close</button>

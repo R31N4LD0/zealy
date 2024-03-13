@@ -52,7 +52,9 @@ const ReactionBox = ({ element, reactions, onAddReaction }) => {
     <>
       <CommentContainer>
         <div className="comment-content--text">{element.content}</div>
+
         <Button onClick={openModal}>Add Comment</Button>
+
         {reactions.length > 0 && (
           <ReactionsContainer>
             {reactions.map((reaction, index) => (
@@ -63,6 +65,7 @@ const ReactionBox = ({ element, reactions, onAddReaction }) => {
             ))}
           </ReactionsContainer>
         )}
+
         {modalOpen && (
           <ReactionModal
             onClose={closeModal}

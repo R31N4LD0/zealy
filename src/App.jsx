@@ -19,19 +19,16 @@ const mockElements = [
   { id: 2, content: "Second Comment 2" },
   { id: 3, content: "Third Comment 3" },
   { id: 4, content: "Fourth Comment 4" },
-  // Adicione mais elementos conforme necessário
 ];
 
 function App() {
   const [reactions, setReactions] = useState([]);
 
-  // Carregar reações salvas ao montar o componente
   useEffect(() => {
     const storedReactions = JSON.parse(localStorage.getItem("reactions")) || [];
     setReactions(storedReactions);
   }, []);
 
-  // Adicionar reação e atualizar localStorage
   const addReaction = (elementId, emoji, comment) => {
     const newReaction = { elementId, emoji, comment };
     const updatedReactions = [...reactions, newReaction];
