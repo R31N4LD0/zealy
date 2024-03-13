@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ReactionModal from "./ReactionModal";
 
+const CommentContainer = styled.div`
+  display: block;
+  width: 100%;
+`;
+
 const Button = styled.button`
   position: relative;
   background-color: #3498db;
@@ -42,23 +47,26 @@ const ReactionBox = ({ element, reactions, onAddReaction }) => {
 
   return (
     <>
-      <div>
+      <CommentContainer>
         <div>{element.content}</div>
         <Button onClick={openModal}>Add Comment</Button>
-      </div>
-      {reactions.length > 0 && (
-        <ReactionsContainer>
-          {reactions.map((reaction, index) => (
-            <div key={index}>
-              <Emoji>{reaction.emoji}</Emoji>
-              {reaction.comment && <Comment>{reaction.comment}</Comment>}
-            </div>
-          ))}
-        </ReactionsContainer>
-      )}
-      {modalOpen && (
-        <ReactionModal onClose={closeModal} onAddReaction={handleAddReaction} />
-      )}
+        {reactions.length > 0 && (
+          <ReactionsContainer>
+            {reactions.map((reaction, index) => (
+              <div key={index}>
+                <Emoji>{reaction.emoji}</Emoji>
+                {reaction.comment && <Comment>{reaction.comment}</Comment>}
+              </div>
+            ))}
+          </ReactionsContainer>
+        )}
+        {modalOpen && (
+          <ReactionModal
+            onClose={closeModal}
+            onAddReaction={handleAddReaction}
+          />
+        )}
+      </CommentContainer>
     </>
   );
 };
