@@ -5,6 +5,9 @@ import ReactionModal from "./ReactionModal";
 const CommentContainer = styled.div`
   display: block;
   width: 100%;
+  border: 1px solid #0f03;
+  border-radius: 10px;
+  padding: 20px;
 `;
 
 const Button = styled.button`
@@ -48,7 +51,7 @@ const ReactionBox = ({ element, reactions, onAddReaction }) => {
   return (
     <>
       <CommentContainer>
-        <div>{element.content}</div>
+        <div className="comment-content--text">{element.content}</div>
         <Button onClick={openModal}>Add Comment</Button>
         {reactions.length > 0 && (
           <ReactionsContainer>

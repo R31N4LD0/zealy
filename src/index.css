@@ -89,5 +89,6 @@ button:focus-visible {
   display: flex;
   gap: 10px;
 }
-.comment-add {
+.comment-content--text {
+  margin-bottom: 15px;
 }
