@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 const ModalContainer = styled.div`
-  background: #3339;
+  background: #333c;
   border: 1px solid #ddd;
   left: 50%;
   height: 100%;

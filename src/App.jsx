@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import ReactionButton from "./ReactionBox";
+import ReactionButton from "./components/ReactionBox";
 
 const AppContainer = styled.div`
   position: relative;
